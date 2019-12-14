@@ -13,7 +13,7 @@ const PORT = 8081;
 app.use(cors());
 app.use(bodyParser.json());
 
-// app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 // app.use(
 //   "/api/users/:id/messages",
 //   loginRequired,
