@@ -45,7 +45,7 @@ exports.signup = async function(req, res, next) {
         username,
         profileImageUrl
       },
-      process.env.SECRET_KEY
+      process.env.SECRET_KEY,
     );
     return res.status(200).json({
       id,
@@ -54,7 +54,7 @@ exports.signup = async function(req, res, next) {
       token
     });
   } catch (err) {
-    //mongoodse validation fail error 
+    //mongoose validation fail error 
     if (err.code === 11000) {
       err.message = "Sorry, that username and/or email is taken";
     }
